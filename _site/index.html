@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>christmas-ornaments</title>
+    <style>
+        html,body{
+            display: grid;
+            height: 100%;   
+        }
+        *{
+            margin: 0;;
+        }
+        body{
+            margin: 0;
+            place-items: center;
+            background-color: #ffffdd;
+            color: 861F16;
+        }
+        
+        svg{
+            width: 70vmin;;
+        }
+        p{
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <svg viewBox="0 0 200 200">
+        <g id="stripes">
+            <path d="" id="stripe1"></path>
+        </g>
+        </svg>
+        <p>Merry Christmas</p>
+    </div>
+
+    <script type="module" >
+    import{drawStripeInCircle}  from "./modules/draw-stripe-in-circle.js"
+
+    const stripeGroup = document.getElementById("stripes");
+
+    const radius=90;
+    const center = [100,100];
+    
+
+    const colors = ["#8AACA6", "#861F16", "#FED340", "#ED6A66"];
+   
+    for(var i=0; i<= colors.length - 1; i++){
+        const stripe = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+        const [cx, cy] = center;
+        
+        const t = i/(colors.length-1);
+        const angle=-25 + 50 * Math.random();
+        const thickness = radius - (radius/colors.length) *Math.random();
+
+        const position = [cx, (cy - radius) + radius * 2  * t  ]
+        let path = drawStripeInCircle(center, radius, thickness, angle, position)
+        stripe.setAttribute("d", path);
+        stripe.setAttribute("fill", colors[i]);
+        stripe.setAttribute("opacity", 0.9);
+        stripeGroup.appendChild(stripe)
+    }
+
+   
+
+    </script>
+</body>
+</html>
