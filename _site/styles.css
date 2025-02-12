@@ -8,7 +8,7 @@ html,body{
 body{
     margin: 0;
     place-items: center;
-    background-color: #123;
+    background-color: rgb(25, 7, 8);
     color: #fff;
 }
 

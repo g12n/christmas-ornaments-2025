@@ -5,11 +5,11 @@
 ## build
 
 ```
-npx esbuild main.js --bundle --outfile=_site/build.js
+npx esbuild main.js --bundle --minify --outfile=_site/build.js 
 ```
 
 ### dev 
 
 ```
-npx esbuild main.js --bundle --outfile=_site/build.js --watch
+npx esbuild main.js --bundle --outfile=_site/build.js --watch --servedir=_site
 ```
