@@ -60,7 +60,7 @@
     }
   };
 
-  // modules/draw-stripe-in-circle.js
+  // modules/make-stripe.js
   var makeStripe = (center2 = [0, 0], thickness2 = 20, length2 = 100, degrees = 0) => {
     let radians = degrees * (Math.PI / 180);
     let p1 = rotate([-length2 / 2, -thickness2 / 2], radians);
@@ -73,6 +73,8 @@
     p4 = add(p4, center2);
     return [[p1, p2], [p3, p4]];
   };
+
+  // modules/draw-stripe-in-circle.js
   var drawStripeInCircle = (center2 = [0, 0], r = 80, thickness2 = 20, degrees = 0, position = center2) => {
     let stripe = makeStripe(position, thickness2, r, degrees);
     let [[p1, p2], [p3, p4]] = stripe;
@@ -97,15 +99,27 @@
     return path;
   };
 
+  // modules/draw-hanger.js
+  var drawHanger = (center2, r, width = 20, thickness2 = 10, angle = -90) => {
+    let [[p1, p2], [p3, p4]] = makeStripe(center2, width, r, angle);
+    let c1 = intersectLineCircle(p1, p2, center2, r + thickness2)[1];
+    let c2 = intersectLineCircle(p3, p4, center2, r + thickness2)[0];
+    let c3 = intersectLineCircle(p3, p4, center2, r)[0];
+    let c4 = intersectLineCircle(p1, p2, center2, r)[1];
+    let path = `M${c1} A ${r + thickness2} ${r + thickness2} 0 0 1 ${c2} L${c3} A ${r} ${r} 0 0 0 ${c4} `;
+    return path;
+  };
+
   // main.js
   var stripeGroup = document.getElementById("stripes");
-  var radius = 80;
+  var radius = 70;
   var diameter = radius * 2;
   var center = [100, 100];
   var colors = [];
-  for (i = 0; i <= 3; i++) {
-    colors.push("#abc");
-    colors.push("#456");
+  for (i = 0; i <= 4; i++) {
+    const lightness = Math.random() * 0.75 + 0.15;
+    const hue = Math.random() * 45 + 220;
+    colors.push(`oklch(${lightness} 0.4 ${hue})`);
   }
   var i;
   var thickness = diameter / (colors.length - 1);
@@ -113,7 +127,7 @@
     const stripe = document.createElementNS("http://www.w3.org/2000/svg", "path");
     const [cx, cy] = center;
     const t = i / (colors.length - 1);
-    const angle = -10 + 20 * Math.random();
+    const angle = -15 + 30 * Math.random();
     const position = [cx, cy - radius + radius * 2 * t];
     let path = drawStripeInCircle(center, radius, thickness, angle, position);
     stripe.setAttribute("d", path);
@@ -122,4 +136,8 @@
     stripeGroup.appendChild(stripe);
   }
   var i;
+  var hanger = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  hanger.setAttribute("d", drawHanger(center, radius + 2, 30, 12, -95));
+  hanger.setAttribute("fill", colors[0]);
+  stripeGroup.appendChild(hanger);
 })();
