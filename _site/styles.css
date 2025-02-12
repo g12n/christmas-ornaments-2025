@@ -1,0 +1,21 @@
+html,body{
+    display: grid;
+    height: 100%;   
+}
+*{
+    margin: 0;;
+}
+body{
+    margin: 0;
+    place-items: center;
+    background-color: #123;
+    color: #fff;
+}
+
+svg{
+    width: 70vmin;;
+}
+p{
+    font-size: 2rem;
+    text-align: center;
+}
