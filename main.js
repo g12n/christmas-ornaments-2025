@@ -2,7 +2,7 @@ import {drawStripeInCircle}  from "./modules/draw-stripe-in-circle.js"
 import { drawHanger } from "./modules/draw-hanger.js";
 const stripeGroup = document.getElementById("stripes");
 
-const radius=70;
+const radius=50;
 
 const diameter = radius *2;
 const center = [100,100];
@@ -36,6 +36,6 @@ for (var i=0; i<=colors.length; i++){
 }
 
 const hanger = document.createElementNS("http://www.w3.org/2000/svg", "path");
-hanger.setAttribute("d", drawHanger(center, radius+2, 34, 14, -92))
+hanger.setAttribute("d", drawHanger(center, radius+2, 32, 12, -60))
 hanger.setAttribute("fill", colors[0]);
 stripeGroup.appendChild(hanger)
