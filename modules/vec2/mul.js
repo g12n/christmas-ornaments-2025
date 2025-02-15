@@ -6,9 +6,9 @@
  * @param {vec2} b the second operand
  * @returns {vec2} out
  */
-export let  multiply = (a, b) =>{
-    let out = []
-    out[0] = a[0] * b[0]
-    out[1] = a[1] * b[1]
-    return out
-}
+export let multiply = (a, b) => {
+	let out = [];
+	out[0] = a[0] * b[0];
+	out[1] = a[1] * b[1];
+	return out;
+};

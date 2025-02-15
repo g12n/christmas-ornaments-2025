@@ -5,8 +5,8 @@
  * @param {vec2} b the second operand
  * @returns {Number} distance between a and b
  */
- export let  distance = (a, b) =>{
-    var x = b[0] - a[0],
-        y = b[1] - a[1]
-    return Math.sqrt(x*x + y*y)
-}
+export let distance = (a, b) => {
+	var x = b[0] - a[0],
+		y = b[1] - a[1];
+	return Math.sqrt(x * x + y * y);
+};

@@ -5,5 +5,5 @@
  * @returns {Number} the length of the vector
  */
 export const length = (a) => {
-    return Math.sqrt(a[0] * a[0] + a[1] * a[1]);
+	return Math.sqrt(a[0] * a[0] + a[1] * a[1]);
 };

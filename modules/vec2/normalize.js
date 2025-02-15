@@ -6,15 +6,15 @@
  * @returns {vec2} out
  */
 export const normalize = (a) => {
-    let out = [];
-    var x = a[0],
-        y = a[1]
-    var len = x*x + y*y
-    if (len > 0) {
-        //TODO: evaluate use of glm_invsqrt here?
-        len = 1 / Math.sqrt(len)
-        out[0] = a[0] * len
-        out[1] = a[1] * len
-    }
-    return out
-}
+	let out = [];
+	var x = a[0],
+		y = a[1];
+	var len = x * x + y * y;
+	if (len > 0) {
+		//TODO: evaluate use of glm_invsqrt here?
+		len = 1 / Math.sqrt(len);
+		out[0] = a[0] * len;
+		out[1] = a[1] * len;
+	}
+	return out;
+};

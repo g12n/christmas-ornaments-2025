@@ -6,6 +6,5 @@
  * @returns {Vector} The divided vector.
  */
 export const divide = (a, factor) => {
-  return [a[0] / factor, a[1] / factor];
+	return [a[0] / factor, a[1] / factor];
 };
-

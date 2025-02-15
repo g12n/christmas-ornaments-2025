@@ -7,8 +7,7 @@
  * @returns {boolean} True if the vectors are equal, false otherwise.
  */
 export const equals = (a, b, tolerance = 0) => {
-    const diffX = Math.abs(a[0] - b[0]);
-    const diffY = Math.abs(a[1] - b[1]);
-    return diffX <= tolerance && diffY <= tolerance;
-  };
-
+	const diffX = Math.abs(a[0] - b[0]);
+	const diffY = Math.abs(a[1] - b[1]);
+	return diffX <= tolerance && diffY <= tolerance;
+};

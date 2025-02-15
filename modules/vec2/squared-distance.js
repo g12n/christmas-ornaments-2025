@@ -6,7 +6,7 @@
  * @returns {Number} squared distance between a and b
  */
 export const squaredDistance = (a, b) => {
-    var x = b[0] - a[0],
-        y = b[1] - a[1]
-    return x*x + y*y
-}
+	var x = b[0] - a[0],
+		y = b[1] - a[1];
+	return x * x + y * y;
+};
