@@ -1,11 +1,35 @@
 /**
- * Calculates the intersection points of two circles
+ * Calculates the intersection points of two circles.
+ *
+ * Given two circles defined by their centers and radii, this function returns
+ * the intersection points where the circles meet. The result can contain:
+ * - **two points** if the circles intersect in two places,
+ * - **one point** if the circles are tangent (touching at exactly one point),
+ * - **an empty array** or `null` if the circles do not intersect or one lies entirely within the other.
  *
  * @see http://www.xarg.org/2016/07/calculate-the-intersection-points-of-two-circles/
- * @param {Array} p1
- * @param {Array} r1
- * @param {Array} p2
- * @returns {Array}
+ *
+ * @param {vec2} p1 - Center point of the first circle `[x, y]`.
+ * @param {number} r1 - Radius of the first circle.
+ * @param {vec2} p2 - Center point of the second circle `[x, y]`.
+ * @param {number} r2 - Radius of the second circle.
+ * @returns {?Array<vec2>} - An array of intersection points (`[x, y]`), which may contain
+ *   zero, one, or two points. Returns `null` if there is no intersection.
+ *
+ * @example
+ * // Two intersections
+ * intersetCircleCircle([0, 0], 10, [10, 0], 10);
+ * // → [[5, 8.66], [5, -8.66]]
+ *
+ * @example
+ * // Tangent circles (one intersection)
+ * intersetCircleCircle([0, 0], 10, [20, 0], 10);
+ * // → [[10, 0]]
+ *
+ * @example
+ * // No intersection
+ * intersetCircleCircle([0, 0], 5, [20, 0], 5);
+ * // → null
  */
 
 export const intersetCircleCircle = (p1, r1, p2, r2) => {

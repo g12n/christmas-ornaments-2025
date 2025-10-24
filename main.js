@@ -1,6 +1,14 @@
-import { drawStripeInCircle } from "./modules/draw-stripe-in-circle.js";
-import { drawHanger } from "./modules/draw-hanger.js";
+import { drawStripeInCircle } from "./modules/ornament/draw-stripe-in-circle.js";
+import { drawHanger } from "./modules/ornament/draw-hanger.js";
+
+import { vec2 } from "./modules/index.js";
+
+console.log(vec2.add([1,2],[2,3]))
+
+
 const stripeGroup = document.getElementById("stripes");
+
+
 
 const radius = 50;
 

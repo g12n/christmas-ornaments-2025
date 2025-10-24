@@ -1,2 +1,2 @@
-export { regularPolygonPoints } from "./regularPolygon.js";
-export { polygon2Path } from "./polygon-to-path.js";
+export * from "./regular-polygon.js";
+export * from "./polygon-to-path.js";

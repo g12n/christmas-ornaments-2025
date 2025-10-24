@@ -1,4 +1,4 @@
-import { rotate, add } from "./vec2/index.js";
+import { rotate, add } from "../vec2/index.js";
 
 /*
  * p1 ----- p2

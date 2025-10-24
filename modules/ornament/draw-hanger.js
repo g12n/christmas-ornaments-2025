@@ -1,16 +1,16 @@
-import { intersectLineCircle } from "./intersect/intersect-line-circle.js";
+import { intersectLineCircle } from "../intersect/intersect-line-circle.js";
 import { makeStripe } from "./make-stripe.js";
-import { intersetCircleCircle } from "./intersect/indersect-circle-circle.js";
+import { intersetCircleCircle } from "../intersect/indersect-circle-circle.js";
 
-import { rotate } from "./vec2/rotate.js";
-import { add } from "./vec2/add.js";
+import { rotate } from "../vec2/rotate.js";
+import { add } from "../vec2/add.js";
 
 /**
- * draws a stylized hanger for christmas ornaments
+ * Draws a stylized hanger for christmas ornaments
  *
- * @param {Array} center - center point of the circle
+ * @param {vec2} center - center point of the circle
  * @param {Number} r - radius of the circle
- * @param {Number} width - thickness the hanger
+ * @param {Number} width - width of the hanger
  * @param {Number} thickness - thickness the hanger
  * @returns {String} - hanger ad svg path
  */

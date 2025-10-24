@@ -1,4 +1,4 @@
-import { intersectLineCircle } from "./intersect/intersect-line-circle.js";
+import { intersectLineCircle } from "../intersect/intersect-line-circle.js";
 import { makeStripe } from "./make-stripe.js";
 
 /**

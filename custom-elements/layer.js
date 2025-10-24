@@ -81,13 +81,11 @@ class Polygon extends Circle {
 
     get fillGeometry() {
 		console.log("Draw Polygon");
-        console.log(this.r)
-        let points = regularPolygonPoints([this.cx, this.cy],this.r,this.sides)
-        const path =   polygon2Path(points)
-        console.log(points, path)
-        
+        console.log(this.r);
+        let points = regularPolygonPoints([this.cx, this.cy],this.r,this.sides);
+        const path =   polygon2Path(points);
+        console.log(points, path);
         return polygon2Path(points);
-
 	}
 }
 

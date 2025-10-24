@@ -1,1 +1,0 @@
-export {polygon2Path} from "../polygon/polygon-to-path.js";

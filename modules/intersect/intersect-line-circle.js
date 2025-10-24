@@ -1,12 +1,38 @@
 /**
- * Calculates the intersection points of a Line and a Circle
+ * Calculates the intersection point(s) between a finite line segment and a circle.
+ *
+ * The function determines where a line defined by points `p1` and `p2` intersects
+ * with a circle centered at `pc` with radius `r`. The returned array may contain:
+ * - **two points** when the line crosses the circle in two places,
+ * - **one point** when the line is tangent to the circle,
+ * - **an empty array** when there is no intersection.
+ *
+ * Each intersection point is expressed in world coordinates as a `vec2` (`[x, y]`).
  *
  * @see http://devmag.org.za/2009/04/17/basic-collision-detection-in-2d-part-2/
- * @param {Array} p1 Starting Point of the Line
- * @param {Array} p2 End Point of the line
- * @param {Array} pc Center Point of the Circle
- * @param {Number} r Radius of the Circle
- * @returns {Array}
+ *
+ * @param {vec2} p1 - Starting point of the line `[x, y]`.
+ * @param {vec2} p2 - End point of the line `[x, y]`.
+ * @param {vec2} pc - Center of the circle `[x, y]`.
+ * @param {number} r - Radius of the circle.
+ * @returns {Array<vec2>} An array of intersection points.  
+ * The array is empty if there are no intersections, and may contain
+ * one or two `vec2` points otherwise.
+ *
+ * @example
+ * // Two intersections
+ * intersectLineCircle([0, 0], [10, 0], [5, 0], 3);
+ * // → [[2, 0], [8, 0]]
+ *
+ * @example
+ * // Tangent line (one intersection)
+ * intersectLineCircle([0, 3], [10, 3], [5, 0], 3);
+ * // → [[5, 3]]
+ *
+ * @example
+ * // No intersection
+ * intersectLineCircle([0, 5], [10, 5], [5, 0], 3);
+ * // → []
  */
 
 import { subtract, add, multiply } from "../vec2/index.js";
