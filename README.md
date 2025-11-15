@@ -2,14 +2,36 @@
  Webcomponents to create my 2025 christmas cards
 
 
-## build
+# resources
+https://r-flash.github.io/PathBool.js/
 
-```
-npx esbuild main.js --bundle --minify --outfile=_site/build.js 
+## Development
+
+This project is **buildless** - it uses native ES modules and runs directly in the browser without a build step.
+
+### Dev Server
+
+```bash
+npm install
+npm start
 ```
 
-### dev 
+This will start `@web/dev-server` with auto-reload on http://localhost:8000
 
+### Alternative: Simple HTTP Server
+
+Any static file server works:
+
+```bash
+# Python
+python3 -m http.server 8000
+
+# Node
+npx serve
+
+# VS Code Live Server extension
 ```
-npx esbuild main.js --bundle --outfile=_site/build.js --watch --servedir=_site
-```
+
+## Deployment
+
+GitHub Pages deploys directly from the repository root - no build needed!

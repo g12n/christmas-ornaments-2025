@@ -4,7 +4,11 @@
   "description": "Webcomponents to create my 2025 christmas cards",
   "main": "main.js",
   "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6"
   },
   "repository": {
     "type": "git",
@@ -15,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/g12n/christmas-ornaments-2025/issues"
   },
-  "homepage": "https://github.com/g12n/christmas-ornaments-2025#readme",
-  "devDependencies": {
-    "documentation": "^14.0.3"
-  }
+  "homepage": "https://github.com/g12n/christmas-ornaments-2025#readme"
 }

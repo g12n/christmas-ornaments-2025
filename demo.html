@@ -4,21 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>christmas-ornaments</title>
-        <link rel="stylesheet" href="_site/styles.css">
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <div>
-            <gfx-artboard width="200" height="200">
-                <gfx-polygon cx="100" cy="100" r="50" sides="4">
-                </gfx-polygon>
-                <gfx-polygon cx="100" cy="140" r="50" sides="6">
-                </gfx-polygon>
-                <gfx-circle cx="100" cy="40" r="20">
-                </gfx-circle>
-            </gfx-artboard>
-            <p>Custom Element <span>2025</span></p>
-        </div>        
-        <script src="custom-elements/layer.js" type="module"></script>
-        <script src="custom-elements/artboard.js" type="module"></script>
+            <h1>Christmas Ornaments <span>2025</span></h1>
+            <christmas-ornament radius="50" color-count="6" seed="42"></christmas-ornament>
+            <christmas-ornament radius="60" color-count="5" seed="123"></christmas-ornament>
+            <christmas-ornament radius="45" color-count="7" seed="999"></christmas-ornament>
+        </div>
+        <script src="custom-elements/christmas-ornament.js" type="module"></script>
     </body>
 </html>

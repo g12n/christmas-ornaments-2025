@@ -4,17 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>christmas-ornaments</title>
-        <link rel="stylesheet" href="_site/styles.css">
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <div>
-            <svg viewBox="0 0 200 200">
-                <g id="stripes">
-                    <path d="" id="stripe1"></path>
-                </g>
-            </svg>
-            <p>Merry Christmas <span>2025</span></p>
+            <christmas-ornament radius="120" color-count="6"></christmas-ornament>
+            <h1>Merry Christmas <span>2025</span></h1>
         </div>
-        <script src="main.js" type="module"></script>
+        <script src="custom-elements/christmas-ornament.js" type="module"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/zachleat/snow-fall@latest/snow-fall.js"></script>
+        <snow-fall></snow-fall>
     </body>
 </html>
